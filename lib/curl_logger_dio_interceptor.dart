@@ -26,7 +26,7 @@ class CurlLoggerDioInterceptor extends Interceptor {
   CurlLoggerDioInterceptor({
     this.printOnSuccess = false,
     this.convertFormData = true,
-    required this.onLog,
+    this.onLog,
   });
 
   @override
