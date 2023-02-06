@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:dio/dio.dart';
 
@@ -55,7 +54,6 @@ class CurlLoggerDioInterceptor extends Interceptor {
     /// add a breakpoint here so all errors can break
     try {
       String curl = _cURLRepresentation(requestOptions);
-      log(curl);
       infoList.add(
         CurlLoggerInfo(
           requestOptions: requestOptions,
@@ -64,7 +62,6 @@ class CurlLoggerDioInterceptor extends Interceptor {
         ),
       );
     } catch (err) {
-      log('unable to create a CURL representation of the requestOptions');
       infoList.add(
         CurlLoggerInfo(
           requestOptions: requestOptions,
