@@ -21,7 +21,7 @@ class CurlLoggerDioInterceptor extends Interceptor {
 
   final void Function(
     List<CurlLoggerInfo> infoList,
-  ) onLog;
+  )? onLog;
 
   CurlLoggerDioInterceptor({
     this.printOnSuccess = false,
@@ -51,6 +51,10 @@ class CurlLoggerDioInterceptor extends Interceptor {
   }
 
   void _renderCurlRepresentation(RequestOptions requestOptions) {
+    if (onLog == null) {
+      return;
+    }
+
     /// add a breakpoint here so all errors can break
     try {
       String curl = _cURLRepresentation(requestOptions);
@@ -75,7 +79,8 @@ class CurlLoggerDioInterceptor extends Interceptor {
     if (infoList.length > 100) {
       infoList.removeRange(0, infoList.length - 100);
     }
-    onLog(infoList);
+
+    onLog!(infoList);
   }
 
   String _cURLRepresentation(RequestOptions options) {
