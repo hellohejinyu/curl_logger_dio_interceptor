@@ -92,24 +92,20 @@ class CurlLoggerDioInterceptor extends Interceptor {
       }
     });
 
-    if (options.data != null || options.method.toLowerCase() == 'post') {
+    if (options.data != null) {
       /// FormData can't be JSON-serialized, so keep only their fields attributes
       if (options.data is FormData && convertFormData) {
         options.data = Map.fromEntries(options.data.fields);
       }
 
-      final data = json.encode(options.data ?? {}).replaceAll('"', '\\"');
+      final data = json.encode(options.data).replaceAll('"', '\\"');
       components.add('-d "$data"');
     }
-    bool contains = false;
-    for (var element in components) {
-      if (element.contains('-X')) {
-        contains = true;
-      }
-    }
-    if (contains) {
+
+    if (options.method.toLowerCase().trim() != 'get') {
       components.add('-X ${options.method}');
     }
+
     components.add('"${options.uri.toString()}"');
 
     return components.join(' \\\n\t');

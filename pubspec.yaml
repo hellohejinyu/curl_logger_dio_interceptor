@@ -1,6 +1,6 @@
 name: curl_logger_dio_interceptor
 description: Get your http requests printed as curl command in your terminal. Share them easily with your colleagues and import them in Postman!
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/hellohejinyu/curl_logger_dio_interceptor
 
 environment:
@@ -15,4 +15,4 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.1
