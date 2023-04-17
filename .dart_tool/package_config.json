@@ -33,9 +33,9 @@
     },
     {
       "name": "dio",
-      "rootUri": "file:///Users/Jinyu/.pub-cache/hosted/pub.dev/dio-4.0.6",
+      "rootUri": "file:///Users/Jinyu/.pub-cache/hosted/pub.dev/dio-5.1.1",
       "packageUri": "lib/",
-      "languageVersion": "2.12"
+      "languageVersion": "2.15"
     },
     {
       "name": "fake_async",
@@ -164,7 +164,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2023-03-17T04:08:33.055562Z",
+  "generated": "2023-04-17T07:02:40.451497Z",
   "generator": "pub",
-  "generatorVersion": "2.19.4"
+  "generatorVersion": "2.19.6"
 }
